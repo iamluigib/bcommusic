@@ -1,0 +1,30 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title {
+  font-family: 'Raleway', sans-serif;
+}
+
+.card {
+  border: solid 1px lightgray;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.btn,
+.btn-large {
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.btn.white,
+.btn-large.white {
+  border: solid 1px lightgray;
+}
