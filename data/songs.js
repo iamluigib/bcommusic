@@ -10,8 +10,8 @@ export const songs = [
     "feat_artist": "none",
     "release_date": "2015",
     "album_art": "../images/album-art/urban-flora.jpg",
-    "genre": "electronic",
-    "mood": "calm",
+    "genre": "Electronic",
+    "mood": "Calm",
     "itunes_embed_url": "https://embed.music.apple.com/us/album/drift/982017568?i=982017761"
   },
   {
@@ -22,8 +22,8 @@ export const songs = [
     "feat_artist": "none",
     "release_date": "2017",
     "album_art": "../images/album-art/traveler-the-second-legend.jpg",
-    "genre": "pop",
-    "mood": "calm",
+    "genre": "Pop",
+    "mood": "Calm",
     "itunes_embed_url": "https://embed.music.apple.com/us/album/vanessa/1288166400?i=1288166535"
   },
   {
@@ -37,8 +37,20 @@ export const songs = [
     ],
     "release_date": "2017",
     "album_art": "../images/album-art/the-upper-hand.jpg",
-    "genre": "hip-hop-rap",
-    "mood": "chill",
+    "genre": "Hip-Hop/Rap",
+    "mood": "Chill",
     "itunes_embed_url": "https://embed.music.apple.com/us/album/that-good-ship-feat-20syl-mr-j-medeiros/1186858969?i=1186859859"
+  },
+  {
+    "date_added": "2019-03-20",
+    "title": "Pretty Thoughts",
+    "album": "Urban Flora",
+    "artist": ["Alina Baraz, Galimatias"],
+    "feat_artist": "none",
+    "release_date": "2015",
+    "album_art": "../images/album-art/urban-flora.jpg",
+    "genre": "Electronic",
+    "mood": "Calm",
+    "itunes_embed_url": "https://embed.music.apple.com/us/album/pretty-thoughts/982017568?i=982017766"
   }
 ]
