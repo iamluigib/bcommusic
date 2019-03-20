@@ -30,7 +30,7 @@ export const songs = [
     "date_added": "2019-03-19",
     "title": "That Good Ship",
     "album": "The Upper Hand",
-    "artist": "Alltta",
+    "artist": "AllttA",
     "feat_artist": [
       "20syl",
       "Mr. J Medeiros"
