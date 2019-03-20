@@ -16,6 +16,7 @@ h6,
   border: solid 1px lightgray;
   border-radius: 20px;
   box-shadow: none;
+  overflow: hidden;
 }
 
 .btn,
