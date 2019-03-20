@@ -6,6 +6,13 @@ import {
 // reference point in document
 const musicWrapper = document.querySelector('#music-wrapper')
 
+// sort song data by date
+songs.sort(function (a, b) {
+  a = new Date(a.date_added);
+  b = new Date(b.date_added);
+  return a > b ? -1 : a < b ? 1 : 0;
+});
+
 // song card creation loop
 songs.forEach((song) => {
 
@@ -46,5 +53,15 @@ songs.forEach((song) => {
   let cardParagraph = document.createElement('p')
   cardContent.appendChild(cardParagraph)
   cardParagraph.textContent = song.artist
+
+  // create apple music embed
+  let iframe = document.createElement('iframe')
+  iframe.allow = 'autoplay *; encrypted-media *;'
+  iframe.frameborder = '0'
+  iframe.height = '150'
+  iframe.style = 'width:100%;max-width:660px;overflow:hidden;background:transparent;border:none;border-radius:10px;'
+  iframe['sandbox'] = "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+  iframe.src = song.itunes_embed_url
+  cardParagraph.appendChild(iframe)
 
 })
