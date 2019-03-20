@@ -29,3 +29,18 @@ h6,
 .btn-large.white {
   border: solid 1px lightgray;
 }
+
+/* Change default checkbox color from MaterializeCSS */
+[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #F44336;
+  border-bottom: 2px solid #F44336;
+}
+
+[type="checkbox"]:indeterminate + span:not(.lever):before {
+  border-right: 2px solid #F44336;
+}
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+  border: 2px solid #F44336;
+  background-color: #F44336;
+}
