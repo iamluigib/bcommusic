@@ -13,6 +13,11 @@ songs.sort(function (a, b) {
   return a > b ? -1 : a < b ? 1 : 0;
 });
 
+// filter for calm songs
+let calmSongs = songs.filter(song => {
+  return song.mood === 'Calm'
+})
+
 // song card creation loop
 songs.forEach((song) => {
 

@@ -3,7 +3,8 @@ export const albums = [
     "title": "Urban Flora",
     "artist": ["Alina Baraz", "Galimatias"],
     "feat_artist": "none",
-    "release_date": "2015",
+    "album_art": "../images/album-art/alina-baraz-and-galimatias-urban-flora.jpg",
+    "release_date": 2015,
     "record_label": "Ultra Records",
     "type": "EP",
     "genre": "Electronic",
@@ -17,13 +18,14 @@ export const albums = [
       "Pretty Thoughts",
       "Unfold"
     ],
-    "length": "31"
+    "length": 31
   },
   {
     "title": "Traveler: The Second Legend - EP",
     "artist": "Lostboycrow",
     "feat_artist": "none",
-    "release_date": "2017",
+    "album_art": "../images/album-art/lostboycrow-traveler-the-second-legend.jpg",
+    "release_date": 2017,
     "record_label": "none",
     "type": "EP",
     "genre": "Pop",
@@ -34,7 +36,7 @@ export const albums = [
       "If I Change",
       "Vanessa"
     ],
-    "length": "19"
+    "length": 19
   },
   {
     "title": "The Upper Hand",
@@ -43,9 +45,10 @@ export const albums = [
       "20syl",
       "Mr. J Medeiros"
     ],
-    "release_date": "2017",
+    "album_art": "../images/album-art/alltta-the-upper-hand.jpg",
+    "release_date": 2017,
     "record_label": "On And On Records",
-    "type": "album",
+    "type": "Album",
     "genre": "Hip-Hop/Rap",
     "track_list": [
       "AllttA",
@@ -65,6 +68,69 @@ export const albums = [
       "Holy Toast",
       "Paradise Lost"
     ],
-    "length": "56"
+    "length": 56
+  },
+  {
+    "title": "Forever",
+    "artist": "Lucian",
+    "feat_artist": [
+      "Noé",
+      "Sleeper",
+      "Jordan Corey",
+      "Remmi"
+    ],
+    "album_art": "../images/album-art/lucian-forever.png",
+    "release_date": 2015,
+    "record_label": "none",
+    "type": "EP",
+    "genre": "Electronic",
+    "track_list": [
+      "Fly by Night",
+      "Follow",
+      "Infrared",
+      "Drift",
+      "Forever"
+    ],
+    "length": 18
+  },
+  {
+    "title": "Sapphire",
+    "artist": "Veorra",
+    "feat_artist": "none",
+    "album_art": "../images/album-art/veorra-sapphire.jpg",
+    "release_date": 2015,
+    "record_label": "JASBA Records",
+    "type": "Album",
+    "genre": "Electronic",
+    "track_list": [
+      "Blind Talk",
+      "Standby",
+      "Run",
+      "Bridges",
+      "Nasty Freestyle",
+      "Someday",
+      "Change"
+    ],
+    "length": 25
+  },
+  {
+    "title": "Emerald",
+    "artist": "Veorra",
+    "feat_artist": "none",
+    "album_art": "../images/album-art/veorra-emerald.jpg",
+    "release_date": 2016,
+    "record_label": "JASBA Records",
+    "type": "Album",
+    "genre": "Electronic",
+    "track_list": [
+      "Secrets",
+      "Color",
+      "Late Nights",
+      "Gone",
+      "Sinner",
+      "Lay Here",
+      "Home"
+    ],
+    "length": 23
   }
 ]
