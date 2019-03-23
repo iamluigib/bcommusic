@@ -75,7 +75,7 @@ songs.forEach((song) => {
   iframe.frameborder = '0'
   iframe.height = '150'
   iframe.style = 'width:100%;max-width:660px;overflow:hidden;background:transparent;border:none;border-radius:10px;'
-  iframe['sandbox'] = "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+  iframe.sandbox = "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
   iframe.src = song.itunes_embed_url
   cardParagraph.appendChild(iframe)
 
