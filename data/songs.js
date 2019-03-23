@@ -45,7 +45,7 @@ export const songs = [
     "date_added": "2019-03-20",
     "title": "Pretty Thoughts",
     "album": "Urban Flora",
-    "artist": ["Alina Baraz, Galimatias"],
+    "artist": ["Alina Baraz", "Galimatias"],
     "feat_artist": "none",
     "release_date": "2015",
     "album_art": "../images/album-art/urban-flora.jpg",

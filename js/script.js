@@ -6,7 +6,7 @@ import {
 // reference point in document
 const musicWrapper = document.querySelector('#music-wrapper')
 
-// sort song data by date
+// sort songs by date added
 songs.sort(function (a, b) {
   a = new Date(a.date_added);
   b = new Date(b.date_added);
@@ -23,7 +23,7 @@ songs.forEach((song) => {
 
   // create card element
   let card = document.createElement('div')
-  card.title = song.name
+  card.title = song.title + ' by ' + song.artist
   card.className = 'card hoverable'
   column.appendChild(card)
 
@@ -63,5 +63,22 @@ songs.forEach((song) => {
   iframe['sandbox'] = "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
   iframe.src = song.itunes_embed_url
   cardParagraph.appendChild(iframe)
+
+  // create genre and mood icon container
+  let cardAction = document.createElement('div')
+  cardAction.className = 'card-action center-align'
+  card.appendChild(cardAction)
+
+  // add genre icons to cardAction
+  let genre = document.createElement('a')
+  genre.className = 'btn red'
+  cardAction.appendChild(genre)
+  genre.textContent = song.genre
+
+  // add mood icons to cardAction
+  let mood = document.createElement('a')
+  mood.className = 'btn red'
+  cardAction.appendChild(mood)
+  mood.textContent = song.mood
 
 })

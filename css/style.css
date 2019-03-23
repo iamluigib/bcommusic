@@ -1,3 +1,7 @@
+/********
+  Fonts
+********/
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -12,12 +16,31 @@ h6,
   font-family: 'Raleway', sans-serif;
 }
 
+/********
+  Cards
+********/
+
 .card {
   border: solid 1px lightgray;
   border-radius: 20px;
   box-shadow: none;
   overflow: hidden;
 }
+
+.card-action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-action a.btn:hover,
+.card-action a.btn-large:hover {
+  box-shadow: none;
+  cursor: default;
+}
+
+/**********
+  Buttons
+**********/
 
 .btn,
 .btn-large {
@@ -30,7 +53,10 @@ h6,
   border: solid 1px lightgray;
 }
 
-/* Change default checkbox color from MaterializeCSS */
+/****************************************************
+  Change default checkbox color from MaterializeCSS
+****************************************************/
+
 [type="checkbox"]:checked + span:not(.lever):before {
   border-right: 2px solid #F44336;
   border-bottom: 2px solid #F44336;
