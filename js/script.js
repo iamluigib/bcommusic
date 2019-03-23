@@ -28,9 +28,15 @@ songs.forEach((song) => {
 
   // create card element
   let card = document.createElement('div')
-  card.title = song.title + ' by ' + song.artist
   card.className = 'card hoverable'
   column.appendChild(card)
+
+  // create text on hover for card
+  if (song.feat_artist === "none") {
+    card.title = song.title + ' by ' + song.artist
+  } else {
+    card.title = song.title + ' (feat. ' + song.feat_artist + ')' + ' by ' + song.artist
+  }
 
   // create card image container
   let cardImage = document.createElement('div')
@@ -52,7 +58,11 @@ songs.forEach((song) => {
   let titleElement = document.createElement('span')
   titleElement.className = 'card-title truncate'
   cardContent.appendChild(titleElement)
-  titleElement.textContent = song.title
+  if (song.feat_artist === "none") {
+    titleElement.textContent = song.title
+  } else {
+    titleElement.textContent = song.title + ' (feat. ' + song.feat_artist + ')'
+  }
 
   // create artist paragraph
   let cardParagraph = document.createElement('p')
