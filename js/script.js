@@ -66,18 +66,50 @@ songs.forEach((song) => {
 
   // create artist paragraph
   let cardParagraph = document.createElement('p')
+  cardParagraph.style = "margin-bottom:10px;"
   cardContent.appendChild(cardParagraph)
   cardParagraph.textContent = song.artist
 
-  // create apple music embed
+  // create soundcloud embed
   let iframe = document.createElement('iframe')
-  iframe.allow = 'autoplay *; encrypted-media *;'
-  iframe.frameborder = '0'
-  iframe.height = '150'
-  iframe.style = 'width:100%;max-width:660px;overflow:hidden;background:transparent;border:none;border-radius:10px;'
-  iframe.sandbox = "allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-  iframe.src = song.itunes_embed_url
+  iframe.style = 'display:none;'
+  iframe.frameborder = 'no'
+  iframe.id = 'sc-' + song.title
+  iframe.src = song.sc_embed_url
   cardParagraph.appendChild(iframe)
+
+  // create card buttons
+  let cardBtns = document.createElement('p')
+  cardBtns.className = "song-btns"
+  cardContent.appendChild(cardBtns)
+
+  // create reset button
+  let resetBtn = document.createElement('a')
+  resetBtn.id = song.title + '-replay'
+  resetBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect'
+  cardBtns.appendChild(resetBtn)
+  let resetBtnIcon = document.createElement('i')
+  resetBtnIcon.className = 'fa fa-redo-alt black-text'
+  resetBtn.appendChild(resetBtnIcon)
+
+  // create play button
+  let playBtn = document.createElement('a')
+  playBtn.id = song.title + '-toggle'
+  playBtn.className = 'btn-floating btn-large red waves-effect waves-light'
+  cardBtns.appendChild(playBtn)
+  let playBtnIcon = document.createElement('i')
+  playBtnIcon.className = 'fa fa-play'
+  playBtn.appendChild(playBtnIcon)
+
+  // create apple music link button
+  let appleMusicBtn = document.createElement('a')
+  appleMusicBtn.href = song.apple_music_url
+  appleMusicBtn.target = '_blank'
+  appleMusicBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect'
+  cardBtns.appendChild(appleMusicBtn)
+  let appleMusicBtnIcon = document.createElement('i')
+  appleMusicBtnIcon.className = 'fab fa-apple black-text'
+  appleMusicBtn.appendChild(appleMusicBtnIcon)
 
   // create genre and mood icon container
   let cardAction = document.createElement('div')
