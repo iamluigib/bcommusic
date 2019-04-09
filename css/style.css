@@ -36,12 +36,18 @@ h6,
   width: 45%;
 }
 
+.apple-music-btn {
+  width: 100% !important;
+}
+
 /************
   Card Flip
 ************/
 
 .col.l4 {
-  perspective: 600px;
+  height: 500px;
+  margin-bottom: 25px;
+  perspective: 1000px;
 }
 
 .card-container {
@@ -95,30 +101,6 @@ h6,
   border: solid 1px lightgray;
 }
 
-.apple-music-btn {
-  width: 100% !important;
-}
-
-/***************
-  Song Buttons
-***************/
-
-.song-btns {
-  display: flex;
-  justify-content: space-between;
-}
-
-.song-btns a.btn {
-  color: black;
-  box-shadow: none;
-  cursor: default;
-}
-
-.song-btns a.btn:hover {
-  box-shadow: none;
-  cursor: default;
-}
-
 /****************************************************
   Change default checkbox color from MaterializeCSS
 ****************************************************/
@@ -136,3 +118,9 @@ h6,
   border: 2px solid #F44336;
   background-color: #F44336;
 }
+
+/****************
+  Music wrapper
+****************/
+
+#music-wrapper {}

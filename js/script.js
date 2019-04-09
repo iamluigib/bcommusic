@@ -25,9 +25,26 @@ let chillSongs = songs.filter(song => {
 })
 
 
-// filter for Energetic songs
+// filter for energetic songs
 let energeticSongs = songs.filter(song => {
   return song.mood === 'Energetic'
+})
+
+// filter for electronic songs
+let electronicSongs = songs.filter(song => {
+  return song.genre === 'Electronic'
+})
+
+
+// filter for hip/hop-rap songs
+let rapSongs = songs.filter(song => {
+  return song.genre === 'Hip-Hop/Rap'
+})
+
+
+// filter for electronic songs
+let popSongs = songs.filter(song => {
+  return song.genre === 'Pop'
 })
 
 
@@ -93,23 +110,6 @@ songs.forEach((song) => {
   iframe.id = 'sc-' + song.title
   iframe.src = song.sc_embed_url
   cardParagraph.appendChild(iframe)
-
-  // create card buttons
-  let cardBtns = document.createElement('p')
-  cardBtns.className = "song-btns"
-  cardContent.appendChild(cardBtns)
-
-  // add genre icons to cardBtns
-  let genre = document.createElement('a')
-  genre.className = 'btn white black-text'
-  cardBtns.appendChild(genre)
-  genre.textContent = song.genre
-
-  // add mood icons to cardBtns
-  let mood = document.createElement('a')
-  mood.className = 'btn white black-text'
-  cardBtns.appendChild(mood)
-  mood.textContent = song.mood
 
   // create card action container
   let cardAction = document.createElement('div')
