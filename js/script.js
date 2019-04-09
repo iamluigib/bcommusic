@@ -31,12 +31,7 @@ songs.forEach((song) => {
   card.className = 'card hoverable'
   column.appendChild(card)
 
-  // create text on hover for card
-  if (song.feat_artist === "none") {
-    card.title = song.title + ' by ' + song.artist
-  } else {
-    card.title = song.title + ' (feat. ' + song.feat_artist + ')' + ' by ' + song.artist
-  }
+  // card front for flip
 
   // create card image container
   let cardImage = document.createElement('div')
@@ -83,14 +78,13 @@ songs.forEach((song) => {
   cardBtns.className = "song-btns"
   cardContent.appendChild(cardBtns)
 
-  // create reset button
-  let resetBtn = document.createElement('a')
-  resetBtn.id = song.title + '-replay'
-  resetBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect'
-  cardBtns.appendChild(resetBtn)
-  let resetBtnIcon = document.createElement('i')
-  resetBtnIcon.className = 'fa fa-redo-alt black-text'
-  resetBtn.appendChild(resetBtnIcon)
+  // create more button
+  let moreBtn = document.createElement('a')
+  moreBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect'
+  cardBtns.appendChild(moreBtn)
+  let moreBtnIcon = document.createElement('i')
+  moreBtnIcon.className = 'fa fa-ellipsis-h black-text'
+  moreBtn.appendChild(moreBtnIcon)
 
   // create play button
   let playBtn = document.createElement('a')
@@ -129,3 +123,9 @@ songs.forEach((song) => {
   mood.textContent = song.mood
 
 })
+
+//card flip
+var card = document.querySelector('.card');
+card.addEventListener('click', function () {
+  card.classList.toggle('is-flipped');
+});
