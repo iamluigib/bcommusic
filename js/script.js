@@ -18,6 +18,19 @@ let calmSongs = songs.filter(song => {
   return song.mood === 'Calm'
 })
 
+
+// filter for chill songs
+let chillSongs = songs.filter(song => {
+  return song.mood === 'Chill'
+})
+
+
+// filter for Energetic songs
+let energeticSongs = songs.filter(song => {
+  return song.mood === 'Energetic'
+})
+
+
 // song card creation loop
 songs.forEach((song) => {
 
@@ -26,12 +39,20 @@ songs.forEach((song) => {
   column.className = 'col s12 m6 l4'
   musicWrapper.appendChild(column)
 
+  // create card container
+  let cardContainer = document.createElement('div')
+  cardContainer.className = 'card-container'
+  column.appendChild(cardContainer)
+
+  // create card front
+  let cardFront = document.createElement('div')
+  cardFront.className = 'card__face card__face--front'
+  cardContainer.appendChild(cardFront)
+
   // create card element
   let card = document.createElement('div')
-  card.className = 'card hoverable'
-  column.appendChild(card)
-
-  // card front for flip
+  card.className = 'card large hoverable'
+  cardFront.appendChild(card)
 
   // create card image container
   let cardImage = document.createElement('div')
@@ -78,57 +99,113 @@ songs.forEach((song) => {
   cardBtns.className = "song-btns"
   cardContent.appendChild(cardBtns)
 
-  // create more button
-  let moreBtn = document.createElement('a')
-  moreBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect flipBtn'
-  cardBtns.appendChild(moreBtn)
-  let moreBtnIcon = document.createElement('i')
-  moreBtnIcon.className = 'fa fa-ellipsis-h black-text'
-  moreBtn.appendChild(moreBtnIcon)
+  // add genre icons to cardBtns
+  let genre = document.createElement('a')
+  genre.className = 'btn white black-text'
+  cardBtns.appendChild(genre)
+  genre.textContent = song.genre
+
+  // add mood icons to cardBtns
+  let mood = document.createElement('a')
+  mood.className = 'btn white black-text'
+  cardBtns.appendChild(mood)
+  mood.textContent = song.mood
+
+  // create card action container
+  let cardAction = document.createElement('div')
+  cardAction.className = 'card-action center-align'
+  card.appendChild(cardAction)
 
   // create play button
   let playBtn = document.createElement('a')
   playBtn.id = song.title + '-toggle'
-  playBtn.className = 'btn-floating btn-large red waves-effect waves-light'
-  cardBtns.appendChild(playBtn)
+  playBtn.className = 'btn red waves-effect waves-light'
+  cardAction.appendChild(playBtn)
   let playBtnIcon = document.createElement('i')
   playBtnIcon.className = 'fa fa-play'
   playBtn.appendChild(playBtnIcon)
+
+  // create more button
+  let moreBtn = document.createElement('a')
+  moreBtn.className = 'btn white z-depth-0 waves-effect'
+  moreBtn.addEventListener('click', function () {
+    console.log(this.parentNode.parentNode.parentNode.parentNode)
+    this.parentNode.parentNode.parentNode.parentNode.classList.toggle('is-flipped');
+  });
+  cardAction.appendChild(moreBtn)
+  let moreBtnIcon = document.createElement('i')
+  moreBtnIcon.className = 'fa fa-ellipsis-h black-text'
+  moreBtn.appendChild(moreBtnIcon)
+
+  // create card back
+  let cardBack = document.createElement('div')
+  cardBack.className = 'card__face card__face--back'
+  cardContainer.appendChild(cardBack)
+
+  // create card back element
+  let cardBackElement = document.createElement('div')
+  cardBackElement.className = 'card large hoverable clickable'
+  cardBack.appendChild(cardBackElement)
+
+  // return to front of card
+  cardBackElement.addEventListener('click', function () {
+    console.log(this.parentNode.parentNode)
+    this.parentNode.parentNode.classList.toggle('is-flipped');
+  });
+
+  // create card back content container
+  let cardContentBack = document.createElement('div')
+  cardContentBack.className = 'card-content'
+  cardBackElement.appendChild(cardContentBack)
+
+  // create card back title
+  let titleElementBack = document.createElement('span')
+  titleElementBack.className = 'card-title'
+  cardContentBack.appendChild(titleElementBack)
+  if (song.feat_artist === "none") {
+    titleElementBack.textContent = song.title
+  } else {
+    titleElementBack.textContent = song.title + ' (feat. ' + song.feat_artist + ')'
+  }
+
+  // create artist paragraph back
+  let cardArtistBack = document.createElement('p')
+  cardArtistBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardArtistBack)
+  cardArtistBack.textContent = 'Artist: ' + song.artist
+
+
+  // create album paragraph
+  let cardAlbumBack = document.createElement('p')
+  cardAlbumBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardAlbumBack)
+  cardAlbumBack.textContent = 'Album: ' + song.album
+
+
+  // create genre paragraph
+  let cardGenreBack = document.createElement('p')
+  cardGenreBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardGenreBack)
+  cardGenreBack.textContent = 'Genre: ' + song.genre
+
+
+  // create mood paragraph
+  let cardMoodBack = document.createElement('p')
+  cardMoodBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardMoodBack)
+  cardMoodBack.textContent = 'Mood: ' + song.mood
+
+  // create card back action
+  let cardActionBack = document.createElement('div')
+  cardActionBack.className = 'card-action'
+  cardBackElement.appendChild(cardActionBack)
 
   // create apple music link button
   let appleMusicBtn = document.createElement('a')
   appleMusicBtn.href = song.apple_music_url
   appleMusicBtn.target = '_blank'
-  appleMusicBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect'
-  cardBtns.appendChild(appleMusicBtn)
-  let appleMusicBtnIcon = document.createElement('i')
-  appleMusicBtnIcon.className = 'fab fa-apple black-text'
-  appleMusicBtn.appendChild(appleMusicBtnIcon)
-
-  // create genre and mood icon container
-  let cardAction = document.createElement('div')
-  cardAction.className = 'card-action center-align'
-  card.appendChild(cardAction)
-
-  // add genre icons to cardAction
-  let genre = document.createElement('a')
-  genre.className = 'btn red'
-  cardAction.appendChild(genre)
-  genre.textContent = song.genre
-
-  // add mood icons to cardAction
-  let mood = document.createElement('a')
-  mood.className = 'btn red'
-  cardAction.appendChild(mood)
-  mood.textContent = song.mood
+  appleMusicBtn.className = 'btn red z-depth-0 waves-effect apple-music-btn'
+  appleMusicBtn.textContent = 'Listen on Apple Music'
+  cardActionBack.appendChild(appleMusicBtn)
 
 })
-
-// card flip
-let card = document.querySelector('.card');
-let ellipsisBtn = document.querySelector('.flipBtn')
-
-ellipsisBtn.addEventListener('click', function () {
-  console.log(this.parentNode.parentNode.parentNode)
-  this.parentNode.parentNode.parentNode.classList.toggle('is-flipped');
-});

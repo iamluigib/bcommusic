@@ -32,10 +32,49 @@ h6,
   justify-content: space-between;
 }
 
-.card-action a.btn:hover,
-.card-action a.btn-large:hover {
-  box-shadow: none;
-  cursor: default;
+.card-action a.btn {
+  width: 45%;
+}
+
+/************
+  Card Flip
+************/
+
+.col.l4 {
+  perspective: 600px;
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-container.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face--front,
+.card__face--back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  z-index: 2;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.card.clickable {
+  cursor: pointer;
 }
 
 /**********
@@ -56,6 +95,10 @@ h6,
   border: solid 1px lightgray;
 }
 
+.apple-music-btn {
+  width: 100% !important;
+}
+
 /***************
   Song Buttons
 ***************/
@@ -65,8 +108,15 @@ h6,
   justify-content: space-between;
 }
 
-.song-btns a.btn-floating.btn-large {
-  border-radius: 100px;
+.song-btns a.btn {
+  color: black;
+  box-shadow: none;
+  cursor: default;
+}
+
+.song-btns a.btn:hover {
+  box-shadow: none;
+  cursor: default;
 }
 
 /****************************************************
@@ -86,45 +136,3 @@ h6,
   border: 2px solid #F44336;
   background-color: #F44336;
 }
-
-/************
-  Card Flip
-************/
-
-.col.l4 {
-  perspective: 600px;
-}
-
-.card {
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  position: relative;
-}
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  backface-visibility: hidden;
-}
-
-.card__face--front {
-  background: red;
-}
-
-.card__face--back {
-  background: blue;
-  transform: rotateY(180deg);
-}
-
-.flipBtn {}
