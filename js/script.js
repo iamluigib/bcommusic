@@ -80,7 +80,7 @@ songs.forEach((song) => {
 
   // create more button
   let moreBtn = document.createElement('a')
-  moreBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect'
+  moreBtn.className = 'btn-floating btn-large white z-depth-0 waves-effect flipBtn'
   cardBtns.appendChild(moreBtn)
   let moreBtnIcon = document.createElement('i')
   moreBtnIcon.className = 'fa fa-ellipsis-h black-text'
@@ -124,8 +124,11 @@ songs.forEach((song) => {
 
 })
 
-//card flip
-var card = document.querySelector('.card');
+// card flip
+let card = document.querySelector('.card');
+let ellipsisBtn = document.querySelector('.flipBtn')
+
 card.addEventListener('click', function () {
-  card.classList.toggle('is-flipped');
+  console.log(this.parentNode.parentNode.parentNode)
+  this.parentNode.parentNode.parentNode.classList.toggle('is-flipped');
 });
