@@ -128,7 +128,7 @@ songs.forEach((song) => {
 let card = document.querySelector('.card');
 let ellipsisBtn = document.querySelector('.flipBtn')
 
-card.addEventListener('click', function () {
+ellipsisBtn.addEventListener('click', function () {
   console.log(this.parentNode.parentNode.parentNode)
   this.parentNode.parentNode.parentNode.classList.toggle('is-flipped');
 });
