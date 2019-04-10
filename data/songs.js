@@ -12,7 +12,7 @@ export const songs = [
     "album_art": "../images/album-art/alina-baraz-and-galimatias-urban-flora.jpg",
     "genre": "Electronic",
     "mood": "Calm",
-    "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/104762415&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/104762415",
     "apple_music_url": "https://itunes.apple.com/us/album/drift/982017568?i=982017761"
   },
   {
@@ -25,7 +25,7 @@ export const songs = [
     "album_art": "../images/album-art/lostboycrow-traveler-the-second-legend.jpg",
     "genre": "Pop",
     "mood": "Calm",
-    "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/345591442&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+    "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/345591442"
   },
   {
     "date_added": "2019-03-19",
@@ -40,7 +40,7 @@ export const songs = [
     "album_art": "../images/album-art/alltta-the-upper-hand.jpg",
     "genre": "Hip-Hop/Rap",
     "mood": "Chill",
-    "sc_embed_url": "https://embed.music.apple.com/us/album/that-good-ship-feat-20syl-mr-j-medeiros/1186858969?i=1186859859"
+    "sc_embed_url": ""
   },
   {
     "date_added": "2019-03-20",
@@ -52,7 +52,7 @@ export const songs = [
     "album_art": "../images/album-art/alina-baraz-and-galimatias-urban-flora.jpg",
     "genre": "Electronic",
     "mood": "Calm",
-    "sc_embed_url": "https://embed.music.apple.com/us/album/pretty-thoughts/982017568?i=982017766"
+    "sc_embed_url": ""
   },
   {
     "date_added": "2019-03-23",
@@ -64,7 +64,7 @@ export const songs = [
     "album_art": "../images/album-art/lucian-forever.png",
     "genre": "Electronic",
     "mood": "Chill",
-    "sc_embed_url": "https://embed.music.apple.com/us/album/fly-by-night-feat-noe/1115967136?i=1115967202"
+    "sc_embed_url": ""
   },
   {
     "date_added": "2019-03-23",
@@ -76,7 +76,7 @@ export const songs = [
     "album_art": "../images/album-art/veorra-sapphire.jpg",
     "genre": "Electronic",
     "mood": "Energetic",
-    "sc_embed_url": "https://embed.music.apple.com/us/album/run/1024714817?i=1024714828"
+    "sc_embed_url": ""
   },
   {
     "date_added": "2019-03-23",
@@ -88,6 +88,32 @@ export const songs = [
     "album_art": "../images/album-art/veorra-emerald.jpg",
     "genre": "Electronic",
     "mood": "Energetic",
-    "sc_embed_url": "https://embed.music.apple.com/us/album/sinner/1074066872?i=1074066877"
+    "sc_embed_url": ""
+  },
+  {
+    "date_added": "2019-04-09",
+    "title": "Off Guard",
+    "album": "Omni.",
+    "artist": "Alexander Lewis",
+    "feat_artist": "Jojee",
+    "release_date": "2018",
+    "album_art": "../images/album-art/alexander-lewis-omni.jpg",
+    "genre": "Electronic",
+    "mood": "Energetic",
+    "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/345496712",
+    "apple_music_url": "https://itunes.apple.com/us/album/off-guard/1283968230?i=1283968681"
+  },
+  {
+    "date_added": "2019-04-09",
+    "title": "Bad",
+    "album": "Kid Calamity",
+    "artist": "Oski",
+    "feat_artist": "Anuka",
+    "release_date": "2017",
+    "album_art": "../images/album-art/oski-kid-calamity.jpg",
+    "genre": "Electronic",
+    "mood": "Energetic",
+    "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/324621012",
+    "apple_music_url": "https://itunes.apple.com/us/album/bad-feat-anuka/1371810341?i=1371810350"
   }
 ]

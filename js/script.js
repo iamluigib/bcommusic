@@ -91,22 +91,25 @@ songs.forEach((song) => {
   let titleElement = document.createElement('span')
   titleElement.className = 'card-title truncate'
   cardContent.appendChild(titleElement)
-  if (song.feat_artist === "none") {
-    titleElement.textContent = song.title
-  } else {
-    titleElement.textContent = song.title + ' (feat. ' + song.feat_artist + ')'
-  }
+  titleElement.textContent = song.title
 
   // create artist paragraph
   let cardParagraph = document.createElement('p')
   cardParagraph.style = "margin-bottom:10px;"
   cardContent.appendChild(cardParagraph)
-  cardParagraph.textContent = song.artist
+  if (song.feat_artist === "none") {
+    cardParagraph.textContent = song.artist
+  } else {
+    cardParagraph.textContent = song.artist + ' feat. ' + song.feat_artist
+  }
 
   // create soundcloud embed
   let iframe = document.createElement('iframe')
-  iframe.style = 'display:none;'
+  iframe.width = '100%'
+  iframe.height = '300'
+  iframe.scrolling = 'no'
   iframe.frameborder = 'no'
+  iframe.style = 'display:none;'
   iframe.id = 'sc-' + song.title
   iframe.src = song.sc_embed_url
   cardParagraph.appendChild(iframe)
@@ -129,7 +132,6 @@ songs.forEach((song) => {
   let moreBtn = document.createElement('a')
   moreBtn.className = 'btn white z-depth-0 waves-effect'
   moreBtn.addEventListener('click', function () {
-    console.log(this.parentNode.parentNode.parentNode.parentNode)
     this.parentNode.parentNode.parentNode.parentNode.classList.toggle('is-flipped');
   });
   cardAction.appendChild(moreBtn)
@@ -158,15 +160,11 @@ songs.forEach((song) => {
   cardContentBack.className = 'card-content'
   cardBackElement.appendChild(cardContentBack)
 
-  // create card back title
+  // create card title back
   let titleElementBack = document.createElement('span')
   titleElementBack.className = 'card-title'
   cardContentBack.appendChild(titleElementBack)
-  if (song.feat_artist === "none") {
-    titleElementBack.textContent = song.title
-  } else {
-    titleElementBack.textContent = song.title + ' (feat. ' + song.feat_artist + ')'
-  }
+  titleElementBack.textContent = song.title
 
   // create artist paragraph back
   let cardArtistBack = document.createElement('p')
@@ -174,22 +172,23 @@ songs.forEach((song) => {
   cardContentBack.appendChild(cardArtistBack)
   cardArtistBack.textContent = 'Artist: ' + song.artist
 
+  // create album paragraph back
+  let cardFeatArtistBack = document.createElement('p')
+  cardFeatArtistBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardFeatArtistBack)
+  if (song.feat_artist === "none") {
+    console.log('skipping feat artist because there is no feat artist')
+  } else {
+    cardFeatArtistBack.textContent = 'Featured Artist: ' + song.feat_artist
+  }
 
-  // create album paragraph
-  let cardAlbumBack = document.createElement('p')
-  cardAlbumBack.style = "margin-bottom:10px;"
-  cardContentBack.appendChild(cardAlbumBack)
-  cardAlbumBack.textContent = 'Album: ' + song.album
-
-
-  // create genre paragraph
+  // create genre paragraph back
   let cardGenreBack = document.createElement('p')
   cardGenreBack.style = "margin-bottom:10px;"
   cardContentBack.appendChild(cardGenreBack)
   cardGenreBack.textContent = 'Genre: ' + song.genre
 
-
-  // create mood paragraph
+  // create mood paragraph back
   let cardMoodBack = document.createElement('p')
   cardMoodBack.style = "margin-bottom:10px;"
   cardContentBack.appendChild(cardMoodBack)
