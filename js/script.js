@@ -107,7 +107,11 @@ function createSongCards(song) {
 
   // create image for card
   let imgElement = document.createElement('img')
-  imgElement.src = song.album_art
+  if (song.album_art == undefined) {
+    imgElement.src = '../images/vinyl.jpg'
+  } else {
+    imgElement.src = song.album_art
+  }
   imgElement.alt = song.album
   cardImage.appendChild(imgElement)
 
