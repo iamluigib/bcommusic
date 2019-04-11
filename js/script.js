@@ -142,13 +142,19 @@ function createSongCards(song) {
   cardContentBack.appendChild(cardArtistBack)
   cardArtistBack.textContent = 'Artist: ' + song.artist
 
-  // create album paragraph back
+  // create feat artist paragraph back
   let cardFeatArtistBack = document.createElement('p')
   cardFeatArtistBack.style = "margin-bottom:10px;"
   cardContentBack.appendChild(cardFeatArtistBack)
   if (song.feat_artist === "none") {} else {
     cardFeatArtistBack.textContent = 'Featured Artist: ' + song.feat_artist
   }
+
+  // create feat artist paragraph back
+  let cardAlbumBack = document.createElement('p')
+  cardAlbumBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardAlbumBack)
+  cardAlbumBack.textContent = 'Album: ' + song.album
 
   // create genre paragraph back
   let cardGenreBack = document.createElement('p')
