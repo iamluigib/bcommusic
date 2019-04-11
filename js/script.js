@@ -19,64 +19,6 @@ class customSong {
   }
 }
 
-/*
-
-function addRemoveGenre(genreArray, checkedState) {
-  console.log(genreArray, checkedState)
-  if (checkedState) {
-    allSelectedGenres = [...genreArray]
-  } else {
-    allSelectedGenres = allSelectedGenres.map((el) => !genreArray.includes(el))
-  }
-  createSongCards(allSelectedGenres)
-}
-let allSelectedGenres = []
-
-// filter for calm songs
-let calmSongs = songs.filter(song => {
-  return song.mood === 'Calm'
-})
-
-// filter for chill songs
-let chillSongs = songs.filter(song => {
-  return song.mood === 'Chill'
-})
-
-// filter for energetic songs
-let energeticSongs = songs.filter(song => {
-  return song.mood === 'Energetic'
-})
-
-// filter for electronic songs
-let electronicSongs = songs.filter(song => {
-  return song.genre === 'Electronic'
-})
-
-// add event listener to electronic checkbox
-const electronic = document.querySelector('#electronic')
-electronic.addEventListener('click', function () {
-  addRemoveGenre(electronicSongs, this.checked)
-})
-
-// filter for hip/hop-rap songs
-let rapSongs = songs.filter(song => {
-  return song.genre === 'Hip-Hop/Rap'
-})
-
-// add event listener to hiphop checkbox
-const hiphop = document.querySelector('#hiphop')
-hiphop.addEventListener('click', function () {
-  addRemoveGenre(rapSongs, this.checked)
-})
-
-
-// filter for pop songs
-let popSongs = songs.filter(song => {
-  return song.genre === 'Pop'
-})
-
-*/
-
 // song card creation loop
 function createSongCards(song) {
 
@@ -130,11 +72,7 @@ function createSongCards(song) {
   let cardParagraph = document.createElement('p')
   cardParagraph.style = "margin-bottom:10px;"
   cardContent.appendChild(cardParagraph)
-  if (song.feat_artist === "none") {
-    cardParagraph.textContent = song.artist
-  } else {
-    cardParagraph.textContent = song.artist + ' feat. ' + song.feat_artist
-  }
+  cardParagraph.textContent = song.artist
 
   // create soundcloud embed
   let iframe = document.createElement('iframe')
@@ -184,7 +122,6 @@ function createSongCards(song) {
 
   // return to front of card
   cardBackElement.addEventListener('click', function () {
-    console.log(this.parentNode.parentNode)
     this.parentNode.parentNode.classList.toggle('is-flipped');
   });
 
@@ -209,9 +146,7 @@ function createSongCards(song) {
   let cardFeatArtistBack = document.createElement('p')
   cardFeatArtistBack.style = "margin-bottom:10px;"
   cardContentBack.appendChild(cardFeatArtistBack)
-  if (song.feat_artist === "none") {
-    console.log('skipping feat artist because there is no feat artist')
-  } else {
+  if (song.feat_artist === "none") {} else {
     cardFeatArtistBack.textContent = 'Featured Artist: ' + song.feat_artist
   }
 
@@ -226,6 +161,22 @@ function createSongCards(song) {
   cardMoodBack.style = "margin-bottom:10px;"
   cardContentBack.appendChild(cardMoodBack)
   cardMoodBack.textContent = 'Mood: ' + song.mood
+
+  // create mood paragraph back
+  let cardReleaseDateBack = document.createElement('p')
+  cardReleaseDateBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardReleaseDateBack)
+  cardReleaseDateBack.textContent = 'Year Released: ' + song.release_date
+
+  // create explicit warning back
+  let cardExplicitBack = document.createElement('p')
+  cardExplicitBack.style = "margin-bottom:10px;"
+  cardContentBack.appendChild(cardExplicitBack)
+  if (song.explicit === true) {
+    cardExplicitBack.textContent = 'Explicit: Yes'
+  } else {
+    cardExplicitBack.textContent = 'Explicit: No'
+  }
 
   // create card back action
   let cardActionBack = document.createElement('div')
