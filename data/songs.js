@@ -340,7 +340,7 @@ export const songs = [
     "feat_artist": "none",
     "explicit": false,
     "release_date": "2017",
-    "album_art": "../images/album-art/galimatias-south.jpg",
+    "album_art": "../images/album-art/portugal-the-man-woodstock.jpg",
     "genre": "Alternative",
     "mood": "Upbeat",
     "sc_embed_url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309277733",
