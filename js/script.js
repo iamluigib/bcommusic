@@ -13,17 +13,34 @@ songs.sort(function (a, b) {
   return a > b ? -1 : a < b ? 1 : 0;
 });
 
+class customSong {
+  constructor(title) {
+    this.title = title
+  }
+}
+
+/*
+
+function addRemoveGenre(genreArray, checkedState) {
+  console.log(genreArray, checkedState)
+  if (checkedState) {
+    allSelectedGenres = [...genreArray]
+  } else {
+    allSelectedGenres = allSelectedGenres.map((el) => !genreArray.includes(el))
+  }
+  createSongCards(allSelectedGenres)
+}
+let allSelectedGenres = []
+
 // filter for calm songs
 let calmSongs = songs.filter(song => {
   return song.mood === 'Calm'
 })
 
-
 // filter for chill songs
 let chillSongs = songs.filter(song => {
   return song.mood === 'Chill'
 })
-
 
 // filter for energetic songs
 let energeticSongs = songs.filter(song => {
@@ -35,21 +52,33 @@ let electronicSongs = songs.filter(song => {
   return song.genre === 'Electronic'
 })
 
+// add event listener to electronic checkbox
+const electronic = document.querySelector('#electronic')
+electronic.addEventListener('click', function () {
+  addRemoveGenre(electronicSongs, this.checked)
+})
 
 // filter for hip/hop-rap songs
 let rapSongs = songs.filter(song => {
   return song.genre === 'Hip-Hop/Rap'
 })
 
+// add event listener to hiphop checkbox
+const hiphop = document.querySelector('#hiphop')
+hiphop.addEventListener('click', function () {
+  addRemoveGenre(rapSongs, this.checked)
+})
 
-// filter for electronic songs
+
+// filter for pop songs
 let popSongs = songs.filter(song => {
   return song.genre === 'Pop'
 })
 
+*/
 
 // song card creation loop
-songs.forEach((song) => {
+function createSongCards(song) {
 
   // create column element for grid system
   let column = document.createElement('div')
@@ -206,5 +235,15 @@ songs.forEach((song) => {
   appleMusicBtn.className = 'btn red z-depth-0 waves-effect apple-music-btn'
   appleMusicBtn.textContent = 'Listen on Apple Music'
   cardActionBack.appendChild(appleMusicBtn)
+}
 
+songs.forEach(song => {
+  createSongCards(song)
 })
+
+const customSongBtn = document.querySelector('button')
+
+customSongBtn.addEventListener('click', function () {
+  let newSongTitle = prompt('Enter the title of your new song')
+  createSongCards(new customSong(newSongTitle))
+});
