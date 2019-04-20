@@ -146,6 +146,15 @@ function createSongCards(song) {
   cardContentBack.appendChild(titleElementBack)
   titleElementBack.textContent = song.title
 
+  // create explicit warning back
+  let cardExplicitBack = document.createElement('p')
+  cardExplicitBack.style = "margin-bottom:10px;"
+  cardExplicitBack.className = 'explicit-warning'
+  cardContentBack.appendChild(cardExplicitBack)
+  if (song.explicit === true) {
+    cardExplicitBack.textContent = 'Explicit'
+  }
+
   // create artist paragraph back
   let cardArtistBack = document.createElement('p')
   cardArtistBack.style = "margin-bottom:10px;"
@@ -183,16 +192,6 @@ function createSongCards(song) {
   cardReleaseDateBack.style = "margin-bottom:10px;"
   cardContentBack.appendChild(cardReleaseDateBack)
   cardReleaseDateBack.textContent = 'Year Released: ' + song.release_date
-
-  // create explicit warning back
-  let cardExplicitBack = document.createElement('p')
-  cardExplicitBack.style = "margin-bottom:10px;"
-  cardContentBack.appendChild(cardExplicitBack)
-  if (song.explicit === true) {
-    cardExplicitBack.textContent = 'Explicit: Yes'
-  } else {
-    cardExplicitBack.textContent = 'Explicit: No'
-  }
 
   // create card back action
   let cardActionBack = document.createElement('div')
