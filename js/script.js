@@ -62,6 +62,16 @@ function createSongCards(song) {
   cardContent.className = 'card-content'
   card.appendChild(cardContent)
 
+  // explicit icon
+  let explicitIconWrapper = document.createElement('span')
+  let explicitIcon = document.createElement('i')
+  explicitIcon.className = 'material-icons left'
+  explicitIcon.textContent = 'explicit'
+  if (song.explicit == true) {
+    cardContent.appendChild(explicitIconWrapper)
+    explicitIconWrapper.appendChild(explicitIcon)
+  }
+
   // create card title
   let titleElement = document.createElement('span')
   titleElement.className = 'card-title truncate'
