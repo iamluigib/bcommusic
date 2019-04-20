@@ -24,10 +24,14 @@ h6 {
 ********/
 
 .card {
-  border: solid 1px lightgray;
-  border-radius: 20px;
-  box-shadow: none;
+  border: solid 1px black;
+  border-radius: 0px;
+  box-shadow: 10px 10px 0px;
   overflow: hidden;
+}
+
+.card.clickable {
+  box-shadow: -10px 10px 0px;
 }
 
 .card-action {
@@ -47,9 +51,9 @@ h6 {
   CARD FLIP
 ************/
 
-.col.l4 {
+.col.xl4 {
   height: 500px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   perspective: 1000px;
 }
 
@@ -91,12 +95,13 @@ h6 {
 **********/
 
 .btn {
-  border-radius: 100px;
+  border-radius: 0px;
   box-shadow: none;
 }
 
 .btn-large {
-  border-radius: 10px;
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 .btn.white,
@@ -130,7 +135,7 @@ label span {
   MUSIC WRAPPER
 ****************/
 
-#music-wrapper {}
+#music-wrapper .card:hover {}
 
 /**********
   SPACERS

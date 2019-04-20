@@ -24,7 +24,7 @@ function createSongCards(song) {
 
   // create column element for grid system
   let column = document.createElement('div')
-  column.className = 'col s12 m6 l4'
+  column.className = 'col s12 m6 l6 xl4'
   musicWrapper.appendChild(column)
 
   // create card container
@@ -39,7 +39,7 @@ function createSongCards(song) {
 
   // create card element
   let card = document.createElement('div')
-  card.className = 'card large hoverable'
+  card.className = 'card large'
   cardFront.appendChild(card)
 
   // create card image container
@@ -101,7 +101,7 @@ function createSongCards(song) {
 
   // create more button
   let moreBtn = document.createElement('a')
-  moreBtn.className = 'btn white z-depth-0 waves-effect'
+  moreBtn.className = 'btn white waves-effect'
   moreBtn.addEventListener('click', function () {
     this.parentNode.parentNode.parentNode.parentNode.classList.toggle('is-flipped');
   });
@@ -117,7 +117,7 @@ function createSongCards(song) {
 
   // create card back element
   let cardBackElement = document.createElement('div')
-  cardBackElement.className = 'card large hoverable clickable'
+  cardBackElement.className = 'card large clickable'
   cardBack.appendChild(cardBackElement)
 
   // return to front of card
@@ -193,7 +193,7 @@ function createSongCards(song) {
   let appleMusicBtn = document.createElement('a')
   appleMusicBtn.href = song.apple_music_url
   appleMusicBtn.target = '_blank'
-  appleMusicBtn.className = 'btn red z-depth-0 waves-effect apple-music-btn'
+  appleMusicBtn.className = 'btn red waves-effect apple-music-btn'
   appleMusicBtn.textContent = 'Listen on Apple Music'
   cardActionBack.appendChild(appleMusicBtn)
 }
