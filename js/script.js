@@ -30,6 +30,7 @@ function createSongCards(song) {
   // create card container
   let cardContainer = document.createElement('div')
   cardContainer.className = 'card-container'
+  cardContainer.ontouchstart = "this.classList.toggle('is-flipped)"
   column.appendChild(cardContainer)
 
   // create card front
