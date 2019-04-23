@@ -30,7 +30,6 @@ function createSongCards(song) {
   // create card container
   let cardContainer = document.createElement('div')
   cardContainer.className = 'card-container'
-  cardContainer.ontouchstart = 'this.classList.toggle("hover")'
   column.appendChild(cardContainer)
 
   // create card front
